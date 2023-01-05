@@ -55,26 +55,40 @@ class MyHomePage extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
+                        padding: EdgeInsets.all(10),
                         margin: EdgeInsets.symmetric(
-                          horizontal: 15,
+                          horizontal: 5,
                           vertical: 10,
                         ),
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Colors.black,
-                            width: 2,
+                            color: Colors.purple,
+                            width: 5, // Dah somk el border nafso
                           ),
                         ),
-                        padding: EdgeInsets.all(8),
                         child: Text(
                           tx.amount.toString(),
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.purple,
+                          ),
                         ),
                       ),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(tx.title),
+                          Text(
+                            tx.title,
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.green,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                           Text(
                             tx.date.toString(),
+                            style: TextStyle(color: Colors.grey),
                           )
                         ],
                       )
