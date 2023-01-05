@@ -38,9 +38,8 @@ class MyHomePage extends StatelessWidget {
         title: Text('Flutter App'),
       ),
       body: Column(
-        mainAxisAlignment:
-            MainAxisAlignment.spaceAround, // from top to bottom in (column)
-        crossAxisAlignment: CrossAxisAlignment.center, // from left to right
+        // mainAxisAlignment: MainAxisAlignment.start, // from top to bottom in (column)
+        crossAxisAlignment: CrossAxisAlignment.stretch, // from left to right
         children: [
           Container(
             width: double.infinity,
@@ -48,6 +47,27 @@ class MyHomePage extends StatelessWidget {
               color: Colors.blue,
               child: Text('Charts'),
               elevation: 5,
+            ),
+          ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Title'),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Amount'),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('Add a transaction'),
+                  )
+                ],
+              ),
             ),
           ),
           Column(
@@ -59,13 +79,13 @@ class MyHomePage extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(10),
                         margin: EdgeInsets.symmetric(
-                          horizontal: 5,
+                          horizontal: 15,
                           vertical: 10,
                         ),
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Colors.purple,
-                            width: 5, // Dah somk el border nafso
+                            width: 2, // Dah somk el border nafso
                           ),
                         ),
                         child: Text(
@@ -83,13 +103,13 @@ class MyHomePage extends StatelessWidget {
                           Text(
                             tx.title,
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 16,
                               color: Colors.green,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           Text(
-                            DateFormat.yMMMd().format(tx.date ) ,
+                            DateFormat.yMMMd().format(tx.date),
                             style: TextStyle(color: Colors.grey),
                           )
                         ],
