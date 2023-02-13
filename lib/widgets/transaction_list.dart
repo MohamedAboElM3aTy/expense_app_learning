@@ -6,10 +6,11 @@ import '../models/transaction.dart';
 class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
   TransactionList(this.transactions);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 800,
       child: ListView.builder(
         itemBuilder: (ctx, index) {
           return Card(
@@ -28,7 +29,7 @@ class TransactionList extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    '\$${transactions[index].amount}',
+                    '\$${transactions[index].amount.toStringAsFixed(2)}',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
