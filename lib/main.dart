@@ -37,12 +37,12 @@ class MyHomePage extends StatelessWidget {
             Container(
               width: double.infinity,
               child: Card(
+                elevation: 5,
                 color: Colors.blue,
                 child: Text(
                   'CHARTS!!',
                   textAlign: TextAlign.center,
                 ),
-                elevation: 5,
               ),
             ),
             UserTransactions(),
