@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 import './widgets/transaction_list.dart';
@@ -12,31 +10,36 @@ void main() => runApp(
     );
 
 class MyApp extends StatelessWidget {
+  final ThemeData theme = ThemeData(
+    primarySwatch: Colors.purple,
+    fontFamily: 'QuickSand',
+    textTheme: ThemeData.light().textTheme.copyWith(
+          titleLarge: TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+          titleMedium: TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+    appBarTheme: AppBarTheme(
+      titleTextStyle: TextStyle(
+        fontSize: 26,
+        fontFamily: 'OpenSans',
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  );
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Personal Expenses',
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-        fontFamily: 'QuickSand',
-        textTheme: ThemeData.light().textTheme.copyWith(
-              titleLarge: TextStyle(
-                fontFamily: 'OpenSans',
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-              titleMedium: TextStyle(
-                fontFamily: 'OpenSans',
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-        appBarTheme: AppBarTheme(
-          titleTextStyle: TextStyle(
-            fontSize: 26,
-            fontFamily: 'OpenSans',
-            fontWeight: FontWeight.bold,
-          ),
+      theme: theme.copyWith(
+        colorScheme: theme.colorScheme.copyWith(
+          secondary: Colors.amber,
         ),
       ),
       home: MyHomePage(),
@@ -48,7 +51,7 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
- 
+
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransactions = [
     // Transaction(
